@@ -1,0 +1,7 @@
+languageCode = "zh_CN"
+title = "My Blog"
+baseURL = "http://www.pugongyingbo.com/"
+theme = "hyde"
+
+[params]
+	description = "github.com/pugongyingbo"
