@@ -2,4 +2,4 @@
 
 * 使用Hugo,具体教程查看我的博客
 
-* [www.pugongyingbo.com](www.pugongyignbo.com)
+* [www.pugongyingbo.com](http://www.pugongyingbo.com/)
