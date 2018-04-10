@@ -1,11 +1,11 @@
 +++
 Categories = ["Development"]
 date = "2017-03-06T16:01:06+08:00"
-title = "Hello Hugo"
+title = "使用hugo创建博客"
 Tags = ["Development"]
 menu = "main"
 +++
-# Hello Hugo in windows
+## Hello Hugo in windows
 
 * 在网上找的教程都是其他系统的，没有Windows的，准备自己试一次，其实很简单
 
@@ -23,58 +23,63 @@ menu = "main"
 
 * clone喜欢的模板 
 
-<pre><code>
-$ mkdir themes
-$ cd themes
-$ git clone https://github.com/spf13/hyde.git 
-<code/></pre>
+<code>
+
+    $ mkdir themes
+    $ cd themes
+    $ git clone https://github.com/spf13/hyde.git 
+
+<code/>
 
 * 对配置文件config.toml进行修改
 
-<pre><code>
+<code>
+
 	baseurl = "http://example.com/"
 	languageCode = "en-us"
 	title = "My Blog"
 	theme = "hyde"
-
 	[params]
     	description = "这里是个人博客"
-<code/></pre>
+<code/>
 
 * 这个时候可以新建你的文章了（在post下)
 
-<pre><code>
-$ hugo new post test.md 
-<code/></pre>
+<code>
+
+    $ hugo new post/test.md 
+<code/>
 
 * 在目录下运行 hugo server 打开浏览器输入localhost：1313，就可以看见你的博客了
 
 * 然后可以将其挂在giuhub page上
 
-# 关于部署
+## 关于部署
 
 * 假设你需要部署在 GitHub Pages上，首先在GitHub上创建一个Repository，命名为：(必须是你的用户名)×××.github.io
 
 * 在站点根目录执行 Hugo 命令生成最终页面：
 
-<pre><code>
-$ hugo --theme=hyde --baseUrl="http://coderzh.github.io/"
-<code/></pre>
+<code>
+
+    $ hugo --theme=hyde --baseUrl="http://coderzh.github.io/"
+<code/>
 
  
 *　如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 
 
-<pre><code>
-$ cd public
-$ git init
-$ git remote add origin https://github.com/coderzh/coderzh.github.io.git
-$ git add -A
-$ git commit -m "first commit"
-$ git push -u origin master
-<code/></pre>
+<code>
+    
+    $ cd public
+    $ git init
+    $ git remote add origin https://github.com/coderzh/coderzh.github.io.git
+    $ git add -A
+    $ git commit -m "first commit"
+    $ git push -u origin master
+<code/>
 
 
-# 参考的文档
+## 参考的文档
 
 * 官方主页
 
@@ -85,5 +90,5 @@ $ git push -u origin master
 * 参考：[http://tonybai.com/2015/09/23/intro-of-gohugo/](http://tonybai.com/2015/09/23/intro-of-gohugo/)；
 
 
-# 我的GitHub：
+## 我的GitHub：
 * https://github.com/pugongyingbo

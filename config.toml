@@ -1,7 +1,15 @@
 languageCode = "zh_CN"
 title = "My Blog"
 baseURL = "http://www.pugongyingbo.com/"
-theme = "hyde"
+theme = "material-design"
+paginate = 9 
+copyright = "© 2017 Copyright Text"
 
 [params]
-	description = "github.com/pugongyingbo"
+	description = "pugongyingbo@163.com"
+	github = "https://github.com/pugongyingbo"
+	weibo = "http://weibo.com/pugongyingbo"
+
+
+[permalinks]
+  post = "/:year/:month/:day/:title/"
