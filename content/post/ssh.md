@@ -3,14 +3,13 @@ Categories = ["development"]
 Tags = []
 date = "2017-05-15T19:13:29+08:00"
 title = "SSH三大框架配置及整合"
-menu = "main"
 +++
 * 学了三大框架有一段时间，虽然现在用的很少了，但是面试还是会问到，再次整理一下
 * 这个是做一个模仿电力公司的项目，包括前后台
 * 首先是spring配置，在applicationContext.xml中
 
-<code>
 
+```
     <!-- 启用组件扫描 -->
     <context:component-scan base-package="com.py" />
     <!-- 连接数据源-->
@@ -78,12 +77,11 @@ menu = "main"
             <aop:advisor advice-ref="txAdvice" pointcut-ref="mypointcut" />
         </aop:config>
 
-</code>
+```
 
 * 项目有多个模块时，可以分别新建配置，比如新建applicationContext-users.xml中set设值注入 
 
-<code>
-    
+```
     <bean id="usersdao" class="com.py.dao.impl.UsersDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
@@ -96,12 +94,11 @@ menu = "main"
         <property name="customerBiz" ref="customerbiz"></property>  
         <property name="ammeterBiz" ref="ammeterbiz"></property>    
     </bean>
-</code>
+```
 
 * 在web.xml配置过滤器
 
-<code>
-    
+```
     <!-- web的监听-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -119,22 +116,22 @@ menu = "main"
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-</code>
+```
 
 * struts.xml里面引用模块的xml,比如struts-users.xml
 
-<code>
-    
+
+```  
     <struts> 
     <include file="struts-users.xml"></include>
     <include file="struts-customer.xml"></include>
     <include file="struts-info.xml"></include>
     <include file="struts-payment.xml"></include>
     </struts>
-</code>
+```
 
-<code>
-    
+
+```    
     <package name="users" extends="struts-default" namespace="">
         <action name="logbyusername" class="usersaction" method="logByUsernameAndPwd">
             <result name="success">person/logBySidSucc.jsp</result>
@@ -170,13 +167,12 @@ menu = "main"
             <result name="success">jsp/change-user-info-success.jsp</result>
         </action>
     </package>
-
-</code>
+```
 
 * UserAction中的方法
 
-<code>
-    
+
+```    
     // 登录检查
     public String login() throws SQLException {
         Users u = this.usersBiz.logByUsernameAndPwd(this.users);
@@ -262,13 +258,12 @@ menu = "main"
         }
         return SUCCESS;
     }
-
-</code>
+```
 
 * 业务逻辑层实现接口
 
-<code>
-    
+
+```    
     public class UsersBizImpl implements UsersBiz{
     private UsersDao usersDao;
     public UsersDao getUsersDao(){
@@ -299,12 +294,12 @@ menu = "main"
     // TODO Auto-generated method stub
     
     }
-</code>
+```
 
 * dao层实现接口
 
-<code>
-    
+
+```    
     public class AGenericHibernateDao <T extends Serializable, ID extends Serializable >
         extends HibernateDaoSupport implements GenericDao<T, ID>{
     
@@ -390,7 +385,7 @@ menu = "main"
       {
         return getHibernateTemplate().get(this.persistentClass, entity);
       }
-</code>
+```
 
 ## 整个demo在我的GitHub：
 

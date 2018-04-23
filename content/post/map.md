@@ -12,8 +12,8 @@ Categories = ["development"]
     * 3、通过Map.keySet遍历key和value
     * 4、通过Map.values()遍历所有的value，但不能遍历key
 
-<code>
 
+```
     import java.util.HashMap;
     import java.util.Iterator;
     import java.util.Map;
@@ -50,13 +50,12 @@ Categories = ["development"]
         }
     }
     }
-
-</code>
+```
 
 * 项目中实际用到的map
 
-<code>
 
+```
     public List<JfhjlQueryBean>  selectJfhjlList(JfhjlQueryBean cx) {
     List<JfhjlQueryBean> jfjlBeans =  jlDao.selectJfhjlList(cx);
      //剔除重复信息
@@ -101,4 +100,4 @@ Categories = ["development"]
             }
         return resultAll;
     }
-</code>
+```

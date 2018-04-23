@@ -1,7 +1,6 @@
 +++
 title = "git提交使用emoji"
 Tags = ["Development"]
-menu = "main"
 date = "2018-04-10T22:35:32+08:00"
 Categories = ["Development"]
 +++
@@ -10,14 +9,15 @@ Categories = ["Development"]
 * 使用方式很简单 
 
 ```
-    git commit -m ":bug: 修复某bug"
+    git commit -m " : bug: 修复某bug"
 ```
 
 
-* ![示例](https://github.com/pugongyingbo/pugongyingbo.github.io/tree/master/images/gitemoji.jpg)
-* 常用例子
-* 
- emoji | emoji代码 | commit说明
+ ![示例](https://raw.githubusercontent.com/pugongyingbo/pugongyingbo.github.io/master/images/gitemoji.jpg)
+ 
+* 常用例子见以下表格
+
+|emoji | emoji代码 | commit说明|
  :-:|:-:|:-:
  :art: (调色板)     | : art : |   改进代码     
  :fire:(火焰)        |   : fire :   |   移除代码或文件   

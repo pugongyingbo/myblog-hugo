@@ -1,15 +1,93 @@
-languageCode = "zh_CN"
+
 title = "My Blog"
 baseURL = "http://www.pugongyingbo.com/"
-theme = "material-design"
-paginate = 9 
-copyright = "© 2017 Copyright Text"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "jane"
+
+# language support # en / zh-cn / other... translations present in i18n/
+defaultContentLanguage = "zh-cn"           # Default language to use
+[languages.zh-cn]
+  languageCode = "zh-cn"
+
+hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+paginate = 3                                              # 首页每页显示的文章数
+rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+disqusShortname = ""      # disqus_shortname
+googleAnalytics = ""      # UA-XXXXXXXX-X
+copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
+# uglyURLs = true         # more info: https://gohugo.io/content-management/urls/#ugly-urls
+
+[author]                  # essential                     # 必需
+  name = "zzb"
+
+[sitemap]                 # essential                     # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]             # config your menu              # 配置目录
+  name = "Home"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "Archives"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "Categories"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.main]]
+  name = "external-link"
+  weight = 50
+  url = "https://gohugo.io"
+
 
 [params]
-	description = "pugongyingbo@163.com"
-	github = "https://github.com/pugongyingbo"
-	weibo = "http://weibo.com/pugongyingbo"
+  debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+  # uglyURLs = true          # You must set true after use uglyURLs in site (above). because $.Site.UglyURLs can not import.
+  since = "2017"            # Site creation time          # 站点建立时间
+  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
+  rssFullContent = false     # if false, Rss feed instead of the summary
 
+  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
+  logoTitle = "博客小站"        # default: the title value    # 默认值: 上面设置的title值
+  # keywords = ["Hugo", "theme","jane"]
+  description = "In me the tiger sniffs the rose"
 
-[permalinks]
-  post = "/:year/:month/:day/:title/"
+  # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
+  archive-paginate = 10
+
+  # paginate style, default use numbered pagination links
+  # if true, use original "Previous" and "Next" links.
+  # paginateOriginalStyle = true
+
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = "2006-01-02"
+
+  # show word count and read time ?                       # 是否显示字数统计与阅读时间
+  moreMeta = true
+
+  [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
+  owner = "pugongyingbo"              # Your GitHub ID
+  repo = "https://github.com/pugongyingbo/pugongyingbo.com"               # The repo to store comments
+  clientId = "75c6cdb87916846429c6"           # Your client ID
+  clientSecret = "1d357d8fef00e2e061cde20737e215d6c551db86"       # Your client secret
+
+  # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
+  toc = false                                                                            # 是否开启目录
+  fancybox = false           # see https://github.com/fancyapps/fancybox                 # 
+  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
+  customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
+  [params.social]                                         # 社交链接
+    a-email = "pugongyingbo@163.com"
+    g-github = "https://github.com/pugongyingbo"

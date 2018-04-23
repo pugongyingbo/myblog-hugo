@@ -3,14 +3,13 @@ Categories =["code"]
 Tags = ["code"]
 date = "2017-04-10T21:28:38+08:00"
 title = "输入一个正整数数组，将他们拼接成一个数，输出拼接出所有数字中最小的一个"
-menu = "main"
 +++
 
-## 输入一个正整数数组，将他们拼接成一个数，输出拼接出所有数字中最小的一个
+#### 输入一个正整数数组，将他们拼接成一个数，输出拼接出所有数字中最小的一个
 * 记录一道笔试题
 
-<code>
 
+```
     import java.util.*;
     public class JoinNumber {
        /**
@@ -37,9 +36,8 @@ menu = "main"
            System.out.println(sb1);
      }
     }
+```
 
-<code/>
-
-## 我的GitHub：
+#### 我的GitHub：
 
 * https://github.com/pugongyingbo

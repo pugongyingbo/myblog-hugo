@@ -1,10 +1,8 @@
 +++
 date = "2017-05-08T10:34:38+08:00"
-Categories = ["development"
-]
+Categories = ["development"]
 Tags = []
 title = "SpringMVC中的简单分页实现"
-menu = "main"
 +++
 
 * 分页每各项目都在使用，却不是很清楚，以至于每次写都要翻看以前的资料。
@@ -13,8 +11,8 @@ menu = "main"
 * 首先建立需要用的实体类Article,然后是PageParam,分别实现当前页、总页、总记录数、页面大小、和需要分页的数据（比如我这用List<Article>）的set、get方法。
 * 代码如下:
 
-<code>
 
+```
     private int currPage ; // 当前页
     
     private int totalPage ; // 总页数
@@ -25,11 +23,11 @@ menu = "main"
     
     private List<Article> data ; // 数据
 
-<code/>
+```
 
 * 需要注意的是setRowCount方法需要进行如下处理：
 
-<code>
+```
 
     public void setRowCount(int rowCount) {
         int totalPage = rowCount / pageSize; //总页数/页大小
@@ -39,13 +37,11 @@ menu = "main"
         setTotalPage(totalPage);
         this.rowCount = rowCount;
         }
-
-<code/>
+```
 
 * 接下来在IndexController中设置当前页为1，处理从页面传来的页面参数转为int型，
 
-<code>
-
+```
     @Controller
     public class IndexController {
     
@@ -74,12 +70,11 @@ menu = "main"
         return "index";
         }
     }
-</code>
+```
 
 * 在Service中设置处理方法
 
-<code>
-   
+```   
     @Service
     public class ArticleService {
     
@@ -103,24 +98,22 @@ menu = "main"
         }
     }
 
-</code>
+```
 
 * 在ArticleDao中设置接口
 
-<code>
+```
     
     @Repository
     public interface ArticleDao {
     int getRowCount();
     List<Article> selectByParams(Map<String, Object> param);
     }
-
-</code>
+```
 
 * 在ArticleMapper中设置sql语句
 
-<code>
-
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace = "com.zzb.myblog.dao.ArticleDao">
@@ -133,13 +126,11 @@ menu = "main"
         limit ${offset}, ${size}
     </select>
     </mapper>
-
-</code>
+```
 
 * jsp页面的设置
 
-<code>
-    
+```    
     <li><a href="#"><%
             PageParam pageParam = (PageParam)request.getAttribute("pageParam");
             int currPage = pageParam.getCurrPage();
@@ -152,9 +143,8 @@ menu = "main"
                 }
                 }
              %></a></li>
+```
 
-</code>
-
-## 整个demo在我的GitHub：
+#### 整个demo在我的GitHub：
 
 * https://github.com/pugongyingbo/myblog-ssm

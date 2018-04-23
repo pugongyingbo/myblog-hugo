@@ -4,11 +4,10 @@ Tags = ["Development"]
 date = "2017-03-24T19:53:01+08:00"
 title = "新浪微博授权登录"
 Description = ""
-menu = "main"
 
 +++
 
-## 使用新浪微博授权登录
+### 使用新浪微博授权登录
 
 * 先登录新浪微博开发者平台，注册一个开发者账号或者登录自己的微博号
 
@@ -30,8 +29,7 @@ menu = "main"
 
 * 记得在AndroidMainfest.xml中添加权限
 
-<code>
-    
+```
     <activity
     android:name = "com.sina.weibo.sdk.component.WeiboSdkBrowser"
     android:configChanges = "keyboardHidden|orientation"
@@ -39,11 +37,11 @@ menu = "main"
     android:exported = "false" >
     </activity>
     
-<code/>
+```
 
 * 新建一个接口
 
-<code>
+```
 
     public interface Constants {
     public static final String APP_KEY      = "2703292856";          // 应用的APP_KEY
@@ -54,11 +52,11 @@ menu = "main"
                     + "follow_app_official_microblog," + "invitation_write";
     }
 
-<code/>
+```
 
 * 新建一个activity
 
-<code>
+```
 
     public class MainActivity extends Activity {
     private AuthInfo authInfo;
@@ -129,8 +127,8 @@ menu = "main"
         }
     }
     }
-<code/>
+```
 
-## 我的GitHub：
+#### 我的GitHub：
 
 * https://github.com/pugongyingbo

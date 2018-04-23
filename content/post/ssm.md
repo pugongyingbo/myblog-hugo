@@ -3,14 +3,13 @@ date = "2017-05-15T20:27:23+08:00"
 title = "SSM框架配置"
 Categories = ["development"]
 Tags = []
-menu = "main"
 +++
 
 * 最近学了SSM框架，在此整理一下配置过程
 * 推荐使用maven配置依赖，在pom.xml中添加需要的依赖包
 
-<code>
-    
+
+```    
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -197,14 +196,12 @@ menu = "main"
     </repositories>
     
     </project>
-
-</code>
+```
 
 * 在src中的resource包新建mybatis文件夹、applicationContext.xml、jdbc.properties、config.properties
 * applicationContext.xml
 
-<code>
-    
+```    
      <description>Spring公共配置</description>
     
     <!-- 开启定时任务 -->
@@ -251,13 +248,11 @@ menu = "main"
         <context:property-placeholder ignore-unresolvable="true" file-encoding="utf-8" 
         location="classpath:config.properties,classpath:jdbc.properties" />
     </beans>
-
-</code>
+```
 
 * jdbc.xml
 
-<code>
-    
+```    
     jdbc.driver=com.mysql.jdbc.Driver
     jdbc.url=jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true
     jdbc.username=root
@@ -265,12 +260,12 @@ menu = "main"
     #connection pool settings
     jdbc.pool.maxIdle=20
     jdbc.pool.maxActive=190
-</code>
+```
 
 * ArticleMapper.xml
 
-<code>
 
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace = "com.zzb.myblog.dao.ArticleDao">
@@ -287,9 +282,9 @@ menu = "main"
 
 * 在webapp文件夹下建立springmvc.xml 、web.xml
 * springmvc.xml
-
-<code>
-    
+```
+ 
+ ```   
     <!-- 
         spring可以自动去扫描base-package下面或者子包下面的java文件，
         如果扫描到有@Component @Controller @Service @Repository等这些注解的类，则把这些类注册为bean 
@@ -300,12 +295,10 @@ menu = "main"
         比如在controller类中需要请求/WEB-INF/page/index.jsp文件，直接写index就可以了
     -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/page/" p:suffix=".jsp" />
-</code>
+ ```
+ * web.xml
 
-* web.xml
-
-<code>
-    
+ ```
      <!-- spring框架必须定义ContextLoaderListener，在启动Web容器时，自动装配Spring applicationContext.xml的配置信息 -->
     <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -354,8 +347,8 @@ menu = "main"
     <welcome-file>index.html</welcome-file>
     </welcome-file-list> 
     </web-app>
-</code>
+ ```
 
-## 整个demo在我的GitHub：
+#### 整个demo在我的GitHub：
 
 * https://github.com/pugongyingbo/myblog-ssm

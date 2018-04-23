@@ -3,7 +3,6 @@ Categories = ["Development"]
 date = "2017-03-06T16:01:06+08:00"
 title = "使用hugo创建博客"
 Tags = ["Development"]
-menu = "main"
 +++
 ## Hello Hugo in windows
 
