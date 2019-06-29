@@ -3,8 +3,8 @@ title: "volatile关键字"
 date: 2018-04-17T23:24:17+08:00
 lastmod: 2018-04-17T23:24:17+08:00
 keywords: []
-tags: ["Development"]
-categories: ["Development"]
+tags: ["Java"]
+categories: ["Java"]
 author: "zzb"
 ---
 
