@@ -1,12 +1,17 @@
-+++
-Categories = ["Development"]
-date = "2017-03-06T16:01:06+08:00"
-title = "使用hugo创建博客"
-Tags = ["Development"]
-+++
-## Hello Hugo in windows
+---
+title: "使用hugo创建博客"
+date: 2017-03-06T16:01:06+08:00
+draft: false
+keywords: []
+description: ""
+tags: ["hugo"]
+categories: ["hugo"]
+author: ""
+---
 
-* 在网上找的教程都是其他系统的，没有Windows的，准备自己试一次，其实很简单
+#### Hello Hugo in windows
+
+> 在网上找的教程都是其他系统的，没有Windows的，准备自己试一次，其实很简单
 
 * Hugo官方主页：[https://gohugo.io/](https://gohugo.io/) 
 
@@ -16,11 +21,7 @@ Tags = ["Development"]
 
 * 添加到系统变量中（我的是windows）
 
-* 这个时候应该可以在你的cmd命令行里执行hugo了，如果出来一堆命令之类的说明安装成功
-
-* 新建个文件夹Site,我们在这new site myblog，会新建一个文件夹叫myblog
-
-* clone喜欢的模板 
+这个时候应该可以在你的cmd命令行里执行hugo了，如果出来一堆命令之类的说明安装成功。新建个文件夹Site,我们在这new site myblog，会新建一个文件夹叫myblog，然后clone喜欢的模板 
 
 <code>
 
@@ -78,7 +79,7 @@ Tags = ["Development"]
 <code/>
 
 
-## 参考的文档
+#### 参考的文档
 
 * 官方主页
 
@@ -88,6 +89,3 @@ Tags = ["Development"]
 
 * 参考：[http://tonybai.com/2015/09/23/intro-of-gohugo/](http://tonybai.com/2015/09/23/intro-of-gohugo/)；
 
-
-## 我的GitHub：
-* https://github.com/pugongyingbo
